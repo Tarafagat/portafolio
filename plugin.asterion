@@ -1,0 +1,18 @@
+language "0.1"
+
+# Fuente editable del plugin.yaml de este repo — compilar con:
+#   asterion plugin from-asterion plugin.asterion --out . --force
+# plugin.yaml es el artefacto generado; este archivo es lo que se edita.
+
+Contract.define(
+    name="israel-andersen-portfolio",
+    version="1.0.0",
+    description="Portafolio de Israel Andersen — Platform Engineer, Senior Golang, Backend y Full Stack. Solo frontend (React + TypeScript).",
+    author="Israel Andersen",
+    license="Apache-2.0",
+)
+
+Contract.language(name="go", version="1.25")
+
+Contract.start(command="./israel-andersen-portfolio", port=8049)
+Contract.health_path(path="/health")
