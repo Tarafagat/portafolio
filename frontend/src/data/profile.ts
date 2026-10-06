@@ -27,6 +27,7 @@ export const profile = {
     "Programador Senior Golang",
     "Backend & Full Stack",
     "Multi-cloud",
+    "IA y bots conversacionales",
     "Creador de Asterion",
     "Modelado 3D",
   ],
@@ -76,9 +77,10 @@ export const jobApplication: JobApplication | null = {
       requirement: "Al menos 3 años desarrollando con Go",
       skills: [{ name: "Go / Golang", level: 4 }],
       evidence:
-        "Asterion Core está construido en Go: CLI, runtime local, agentes de estado y métricas, sistema de plugins y motor de aprovisionamiento multi-nube. También el contrato de plugins (SDK, validador, generador de código) y el servidor que publica este portafolio.",
+        "Asterion Core está construido en Go: CLI, runtime local, agentes de estado y métricas, sistema de plugins y motor de aprovisionamiento multi-nube. También AGCA, mi arquitectura cognitiva para bots (grafo, agentes concurrentes con goroutines, contratos de herramientas), el contrato de plugins y el servidor que publica este portafolio.",
       links: [
         { label: "asterion-core", href: "https://github.com/Tarafagat/asterion-core" },
+        { label: "AGCA", href: "https://github.com/Tarafagat/asterion-graph-cognitive-architecture" },
         { label: "asterion-plugin-contract", href: "https://github.com/Tarafagat/asterion-plugin-contract" },
       ],
     },
@@ -180,6 +182,25 @@ export const projects: Project[] = [
     badge: "Go",
   },
   {
+    name: "AGCA — Asterion Graph Cognitive Architecture",
+    tagline: "Arquitectura cognitiva en Go para montar bots",
+    description:
+      "Arquitectura donde un grafo cognitivo, neuronas intercambiables, agentes especializados y la experiencia acumulada cooperan como una sola inteligencia, declarada desde un archivo .asterion. Es la base sobre la que se montan bots como Fuelity Bot.",
+    proposal:
+      "Bots que deciden de forma trazable y aprenden de sus resultados, sin ejecutar nada fuera de lo que su contrato autoriza.",
+    features: [
+      "Grafo cognitivo con nodos y relaciones tipadas, confianza y procedencia",
+      "Contrato de neuronas independiente del modelo: el cerebro se cambia sin tocar el resto",
+      "Agentes concurrentes con goroutines y concurrencia acotada",
+      "Contratos de herramientas cerrados: solo se ejecuta lo declarado",
+      "Cada decisión queda explicada: candidatos, puntajes y motivo",
+      "Aprendizaje por experiencia y roles con herencia (deny siempre gana)",
+    ],
+    tech: ["Go", "Asterion Language", "Grafos", "Agentes"],
+    links: [{ label: "GitHub", href: "https://github.com/Tarafagat/asterion-graph-cognitive-architecture" }],
+    badge: "Go · IA",
+  },
+  {
     name: "Asterion Cloud",
     tagline: "Plataforma de administración",
     description:
@@ -228,6 +249,28 @@ export const projects: Project[] = [
     ],
     tech: ["Python", "FastAPI", "React", "MySQL", "Redis", "Firebase Hosting", "Cloudflare Tunnel"],
     links: [{ label: "fuelityx.com", href: "https://www.fuelityx.com" }],
+  },
+  {
+    name: "Fuelity Bot",
+    tagline: "Chat conversacional con IA local, basado en AGCA",
+    description:
+      "Asistente conversacional para Fuelity Plus construido sobre AGCA. Usa embeddings para entender cada mensaje y elegir la herramienta adecuada, y un cerebro Qwen 2.5 0.5B que corre localmente para procesar las solicitudes.",
+    proposal:
+      "Que el equipo de una faena consulte y gestione sus reportes conversando, con una IA que corre en infraestructura propia.",
+    features: [
+      "Consulta, creación y cierre de reportes GR, hallazgos e incidentes en español",
+      "Embeddings para seleccionar las herramientas más relevantes antes de llamar al modelo",
+      "Cerebro Qwen 2.5 0.5B vía Ollama: liviano, rápido y sin APIs externas",
+      "Aislamiento por rol, empresa y faena, con autenticación JWT",
+      "Si los embeddings fallan, sigue operando con todas las herramientas",
+      "Desplegado como plugin de Asterion",
+    ],
+    tech: ["Python", "FastAPI", "AGCA", "Qwen 2.5 0.5B", "Ollama", "Embeddings", "MySQL", "Redis"],
+    links: [
+      { label: "AGCA", href: "https://github.com/Tarafagat/asterion-graph-cognitive-architecture" },
+      { label: "fuelityx.com", href: "https://www.fuelityx.com" },
+    ],
+    badge: "IA",
   },
   {
     name: "Botillerías App",
@@ -327,6 +370,15 @@ export const skillGroups: SkillGroup[] = [
       { name: "Automatización", level: 4 },
       { name: "Control de acceso por roles", level: 3 },
       { name: "Metodologías ágiles", level: 3 },
+    ],
+  },
+  {
+    title: "IA y bots",
+    skills: [
+      { name: "Arquitecturas cognitivas (AGCA)", level: 4 },
+      { name: "Bots conversacionales", level: 3 },
+      { name: "Embeddings y búsqueda semántica", level: 3 },
+      { name: "LLMs locales (Qwen, Ollama)", level: 3 },
     ],
   },
   {
