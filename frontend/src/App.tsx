@@ -1,14 +1,12 @@
 import Clouds from "./components/Clouds";
 import Contact from "./components/Contact";
 import Hero from "./components/Hero";
-import JobMatch from "./components/JobMatch";
 import Modeling from "./components/Modeling";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
-import { jobApplication, profile } from "./data/profile";
+import { profile } from "./data/profile";
 
 const nav = [
-  ...(jobApplication ? [{ href: "#postulacion", label: "Postulación" }] : []),
   { href: "#proyectos", label: "Proyectos" },
   { href: "#experticia", label: "Experticia" },
   { href: "#nubes", label: "Nubes" },
@@ -41,7 +39,6 @@ export default function App() {
 
       <Hero />
       <main>
-        {jobApplication && <JobMatch job={jobApplication} />}
         <Projects />
         <Skills />
         <Clouds />

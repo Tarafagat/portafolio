@@ -38,7 +38,6 @@ Todo el texto está en [`frontend/src/data/profile.ts`](frontend/src/data/profil
 | Qué | Dónde |
 |---|---|
 | Nombre, roles, contacto, links | `profile` |
-| Postulación activa (hoy: Desarrollador Golang · 3IT / Tanner) | `jobApplication` — ponerlo en `null` oculta la sección |
 | Proyectos y sus propuestas | `projects` |
 | Niveles de experticia (1 Básico · 2 Intermedio · 3 Avanzado · 4 Experto) | `skillGroups` |
 | Nubes y tabla de equivalencias | `clouds`, `cloudEquivalences` |

@@ -39,7 +39,7 @@ export default function Clouds() {
               <tr key={r.concept}>
                 <th scope="row">{r.concept}</th>
                 <td>{r.aws}</td>
-                <td className="hl">{r.azure}</td>
+                <td>{r.azure}</td>
                 <td>{r.gcp}</td>
                 <td>{r.oci}</td>
               </tr>

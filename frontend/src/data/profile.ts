@@ -1,5 +1,5 @@
 // Todo el contenido del portafolio vive acá: editar este archivo basta
-// para cambiar textos, niveles, proyectos o la postulación activa.
+// para cambiar textos, niveles o proyectos.
 
 export type Level = 1 | 2 | 3 | 4;
 
@@ -43,106 +43,6 @@ export const profile = {
   github: "https://github.com/Tarafagat",
   asterion: "https://www.asterioncloud.com",
   fuelity: "https://www.fuelityx.com",
-};
-
-// ── Postulación activa ──────────────────────────────────────────────
-// Poner en null para ocultar la sección (por ejemplo, al postular a otro
-// cargo con el mismo portafolio).
-
-export interface JobRequirement {
-  requirement: string;
-  skills: Skill[];
-  evidence: string;
-  links?: Link[];
-}
-
-export interface JobApplication {
-  title: string;
-  company: string;
-  client: string;
-  modality: string;
-  pitch: string;
-  requirements: JobRequirement[];
-}
-
-export const jobApplication: JobApplication | null = {
-  title: "Desarrollador Golang",
-  company: "3IT",
-  client: "Tanner",
-  modality: "Híbrida",
-  pitch:
-    "Desarrollo en Go a diario: Asterion Core —CLI, runtime, agentes y motor multi-nube— está escrito en Go. Documento mis APIs con OpenAPI, he integrado firma electrónica con certificados digitales para el SII y opero en las principales nubes, incluida Azure. Estos son los requisitos del cargo y dónde está mi experiencia en cada uno.",
-  requirements: [
-    {
-      requirement: "Al menos 3 años desarrollando con Go",
-      skills: [{ name: "Go / Golang", level: 4 }],
-      evidence:
-        "Asterion Core está construido en Go: CLI, runtime local, agentes de estado y métricas, sistema de plugins y motor de aprovisionamiento multi-nube. También AGCA, mi arquitectura cognitiva para bots (grafo, agentes concurrentes con goroutines, contratos de herramientas), el contrato de plugins y el servidor que publica este portafolio.",
-      links: [
-        { label: "asterion-core", href: "https://github.com/Tarafagat/asterion-core" },
-        { label: "AGCA", href: "https://github.com/Tarafagat/asterion-graph-cognitive-architecture" },
-        { label: "asterion-plugin-contract", href: "https://github.com/Tarafagat/asterion-plugin-contract" },
-      ],
-    },
-    {
-      requirement: "Node.js",
-      skills: [
-        { name: "Node.js", level: 3 },
-        { name: "TypeScript", level: 3 },
-      ],
-      evidence:
-        "Ecosistema JavaScript/TypeScript sobre Node.js: aplicaciones React + TypeScript con Vite y pnpm en Asterion Cloud, Fuelity, Botillerías y R&B Auto Parts, además del tooling de build de los plugins de Asterion.",
-    },
-    {
-      requirement: "Metodología ágil",
-      skills: [{ name: "Metodologías ágiles", level: 3 }],
-      evidence:
-        "Entregas iterativas y versionadas: cada repositorio mantiene CHANGELOG por versión, y los productos crecen por incrementos (Fuelity Plus → Fuelity X → Fuelity H).",
-    },
-    {
-      requirement: "Integración con E-Cert",
-      skills: [{ name: "Firma electrónica y certificados digitales", level: 3 }],
-      evidence:
-        "En Asterion SII implementé la gestión de certificados digitales PFX/PKCS#12 (X.509), la firma XMLDSig, el timbre TED y el envío de documentos al SII. Es el mismo tipo de certificado de firma electrónica que emite E-Cert.",
-      links: [{ label: "asterion-sii", href: "https://github.com/Tarafagat/asterion-sii" }],
-    },
-    {
-      requirement: "MongoDB",
-      skills: [
-        { name: "MongoDB", level: 2 },
-        { name: "Redis", level: 3 },
-        { name: "MySQL / PostgreSQL", level: 3 },
-      ],
-      evidence:
-        "Modelado de datos relacional y NoSQL en producción: MySQL y Redis en Fuelity Plus, PostgreSQL en Asterion SII y Firebase en Botillerías y R&B Auto Parts.",
-    },
-    {
-      requirement: "Microsoft Azure: API Management, Application Insights, Azure Functions y Service Bus",
-      skills: [
-        { name: "API Management", level: 3 },
-        { name: "Azure Functions", level: 3 },
-        { name: "Service Bus", level: 3 },
-        { name: "Application Insights", level: 3 },
-      ],
-      evidence:
-        "Asterion Core incluye un motor de aprovisionamiento multi-nube (AWS, Azure, GCP y OCI). Trabajo con APIs gestionadas, funciones serverless, mensajería y observabilidad, y traduzco una arquitectura de una nube a otra (ver la sección Multi-cloud).",
-      links: [{ label: "asterion-core", href: "https://github.com/Tarafagat/asterion-core" }],
-    },
-    {
-      requirement: "Azure DevOps, Git/Gitflow y Swagger/OpenAPI",
-      skills: [
-        { name: "Swagger / OpenAPI", level: 4 },
-        { name: "Git / Gitflow", level: 4 },
-        { name: "Azure DevOps", level: 2 },
-      ],
-      evidence:
-        "Creé «asterion plugin from-openapi», que transforma una especificación OpenAPI en un plugin de Asterion, y cada plugin publica su api/openapi.yaml; en FastAPI documento con Swagger UI. Todo mi código vive en Git con CI en GitHub Actions, que se traslada directo a Azure Pipelines.",
-      links: [
-        { label: "Contrato OpenAPI", href: "https://github.com/Tarafagat/asterion-plugin-contract" },
-        { label: "GitHub", href: "https://github.com/Tarafagat" },
-      ],
-    },
-  ],
 };
 
 // ── Proyectos y sus propuestas ──────────────────────────────────────
